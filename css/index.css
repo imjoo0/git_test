@@ -1,0 +1,123 @@
+body{min-width: 1280px;}
+/* 헤더 > h1 > h2 , lnb, spot 
+   height 는 블록 크기 높이 */
+header{position: relative; height: 81px; text-align: center;}
+/* padding 위아래14px, 오른쪽왼쪽0*/
+header h1{position: absolute; left: 50px;top: 0;padding: 14px 0;}
+
+/* 로고 작업 */
+header h1 a {
+    display: block;
+    width: 118px;
+    height: 53px;
+    color: transparent;
+    background: url(../images/sp_com.png)no-repeat -300px 0; 
+} 
+
+/* 대메뉴 inline block 일렬로 정렬 */
+header .lnb li{display: inline-block;}
+header .lnb li a{
+    display: block; 
+    height: 81px; 
+    padding: 0 35px; /* 각 li 들의 간격 35px */
+    font-size:17px;
+    color: #333;
+    line-height: 81px;
+}
+header .lnb li a:hover{color: #2d5b79; font-weight: bold;} /*마우스 커서 붙으면 폰트 색 바뀌고 두꺼워짐*/
+
+/*각 li들의 요소들 하나하나에 선 긋기*/
+header .lnb li a span{position: relative;}
+header .lnb li a:hover span:after{
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #2d5b79;
+}
+
+/*관련 서비스 리스트들의 위치 선정*/
+header h2{position: absolute;right: 50px; top: 0;}
+header .spot{position: absolute;right: 50px; top: 0;}
+header .spot li{position: relative; float: left;}
+
+/* 각 요소들 사이 간격 설정 및 막대바 삽입 */
+header .spot li:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top:50%;
+    width: 1px;
+    height: 7px;
+    background: #ccc;
+    transform: translateY(-50%);
+}
+header .spot li:first-child :after{display: none;}
+header .spot li a{display: block; height: 81px;padding: 0 10px;line-height: 81px;}
+header .spot li:last-child a{padding-right: 0;}
+
+/* 배너 부분 위치 선정 */
+.visual{position: relative; padding: 0 50px;}
+
+/* 배너 이전 다음 아이콘 설정 */
+.visual .prev,
+.visual .next{
+    display: block; 
+    position: absolute; 
+    top:50%; 
+    width: 25px; 
+    height: 47px;
+    transform: translateY(-50%);
+    background: url(../images/sp_com.png)no-repeat;
+    color:transparent;
+} 
+/*sp_com.png 내에서 아이콘 위치 선정*/
+.visual .prev{left: 82px; background-position: -128px -60px;}
+.visual .next{right: 82px; background-position: -158px -60px;}
+
+/* 배너페이지 */
+.visual .control{position: absolute;left: 0;bottom: 55px;width: 100%;text-align: center;}
+
+/*시작 일시정지 위0 오른쪽45 아래 0 왼쪽 0*/
+.visual .control > div{display: inline-block;position: relative;padding: 0 45px 0 0;}
+/*배너페이지*/
+.visual .control > div > div{position: absolute; right: 0;}
+/*페이지 넘기는 바 설정*/
+.visual .control > div > div a{
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 0 0 7px;
+    width: 8px;
+    height: 9px;
+    background: url(../images/sp_com.png)no-repeat;
+    opacity: 0.5; /*흐릿하게 보이게 함*/
+}
+.visual .control > div > a.on{opacity: 1;}
+.visual .control > div > div a.play{background-position: -108px -72px;}
+.visual .control > div > div a.pause{background-position: -108px -60px;}
+
+/*배너페이지*/
+.visual .control ul{display: inline-block;position: relative;font-size: 0;top: -7px;font-size: 0;}
+.visual .control li{display: inline-block;padding: 0 3px;}
+.visual .control li .on a{background: #fff;}
+.visual .control li a{
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    border: none;
+}
+
+.visual .control a{ color: transparent;}
+.visual .con > div{height: 640px;}
+.visual .con .slide{
+    background: url(../images/bg_main02.jpg)no-repeat center;
+    color: #fff;
+    font-size: 32px;
+    line-height: 46px;
+}
+.visual .con .slide p{padding: 19px 0 0; font-size: 32px; line-height: 46px;}
+.visual .con .slide .txt{position: absolute;left:50%;top: 175px;}
